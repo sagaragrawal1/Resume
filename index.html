@@ -1,1 +1,334 @@
 
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Sagar Agrawal
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/1.88.0/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_fiori_3"
+        data-sap-ui-libs="sap.f,sap.m,sap.uxap,sap.suite.ui.microchart,sap.suite.ui.commons"></script>
+    <script>
+        var oObjectPageLayout = new sap.uxap.ObjectPageLayout("idOPL", {
+            showTitleInHeaderContent: true,
+            upperCaseAnchorBar: false
+        });
+        var headertitle = new sap.uxap.ObjectPageDynamicHeaderTitle("idHeaderTitle", {});
+        var HBox = new sap.m.HBox("idHBox", {});
+        var NameTitle = new sap.m.Title("idNameTitle", {
+            text: "Sagar Agrawal",
+            wrapping: true
+        });
+        var NameTitle2 = new sap.m.Title("idNameTitle2", {
+            text: "Sagar Agrawal",
+            wrapping: true
+        });
+        var posttext = new sap.m.Text("idposttext", { text: "Web Applicaiton Developer" })
+        var Avatar = new sap.m.Avatar("idAvatar", {
+            badgeIcon: "sap-icon://camera",
+            src: "https://media-exp1.licdn.com/dms/image/C4E03AQHHZp3184Z9Zg/profile-displayphoto-shrink_200_200/0/1615553871564?e=1625702400&v=beta&t=044IK-AnjHcgeMrqD8nhpLhIbKZxJcf3cskk-vlWilM",
+            displaySize: "XL"
+
+        });
+        var AvatarLBI = new sap.m.LightBoxItem("idAvatarLBI", {
+            imageSrc: "https://media-exp1.licdn.com/dms/image/C4E03AQHHZp3184Z9Zg/profile-displayphoto-shrink_200_200/0/1615553871564?e=1625702400&v=beta&t=044IK-AnjHcgeMrqD8nhpLhIbKZxJcf3cskk-vlWilM",
+            alt: "Sagar Agrawal",
+            title: "Sagar Agrawal",
+            subtitle: "Hey There! Its me."
+        });
+        var AvatarLB = new sap.m.LightBox("idAvatarLB");
+        AvatarLB.addImageContent(AvatarLBI);
+        Avatar.setDetailBox(AvatarLB);
+        var Avatar2 = new sap.m.Avatar("idAvatar2", {
+            src: "https://media-exp1.licdn.com/dms/image/C4E03AQHHZp3184Z9Zg/profile-displayphoto-shrink_200_200/0/1615553871564?e=1625702400&v=beta&t=044IK-AnjHcgeMrqD8nhpLhIbKZxJcf3cskk-vlWilM",
+            displaySize: "L",
+            badgeIcon: "sap-icon://camera"
+        });
+        var AvatarLBI2 = new sap.m.LightBoxItem("idAvatarLBI2", {
+            imageSrc: "https://media-exp1.licdn.com/dms/image/C4E03AQHHZp3184Z9Zg/profile-displayphoto-shrink_200_200/0/1615553871564?e=1625702400&v=beta&t=044IK-AnjHcgeMrqD8nhpLhIbKZxJcf3cskk-vlWilM",
+            alt: "Sagar Agrawal",
+            title: "Sagar Agrawal",
+            subtitle: "Hey There! Its me."
+        });
+        var AvatarLB2 = new sap.m.LightBox("idAvatarLB2");
+        AvatarLB2.addImageContent(AvatarLBI2);
+        Avatar2.setDetailBox(AvatarLB2);
+        Avatar.addStyleClass('sapUiMediumMarginEnd');
+        Avatar2.addStyleClass('sapUiMediumMarginEnd');
+        var phoneno = new sap.m.Text("idphone", { text: "(+91) 945707 6468" });
+        var Email = new sap.m.Text("idemail", { text: "sagar_agrawal@outlook.in" });
+        var VBOX = new sap.m.VBox("idvbox", {});
+        // VBOX.addStyleClass('sapUiSmallMarginBeginEnd');
+        var objstatus = new sap.m.GenericTag("idObjStatus", {
+            text: "Loves UX/UI Designing", design: "StatusIconHidden", status: "Success"
+        });
+        objstatus.addStyleClass('sapUiSmallMarginTop');
+        VBOX.addItem(phoneno);
+        VBOX.addItem(Email);
+        VBOX.addItem(objstatus);
+
+        var flexbox = new sap.m.FlexBox("idflexbox", {});
+        var snappedflexbox = new sap.m.FlexBox("idsnapflexbox", { fitContainer: true, alignItems: "Center" });
+        snappedflexbox.addItem(Avatar2);
+        snappedflexbox.addItem(NameTitle2);
+        var PhoneButton = new sap.m.OverflowToolbarButton("idPhoneBtn", {
+            icon: "sap-icon://call",
+            text: "Call",
+            tooltip: "Call",
+            press: function () {
+                sap.m.URLHelper.triggerTel("+919457076468");
+            }
+        });
+
+        var shareButton = new sap.m.OverflowToolbarButton("idShareBtn", {
+            icon: "sap-icon://share-2",
+            text: "Share this profile",
+            type: "Emphasized",
+            tooltip: "Share this Profile",
+            press: function () {
+                sap.m.URLHelper.triggerEmail("", "Check out this Amazing LinkedIn Profile of Sagar Agrawal");
+            }
+        });
+        var Emailbtn = new sap.m.OverflowToolbarButton("idEmailBtn", {
+            icon: "sap-icon://email-read",
+            text: "E-Mail",
+            tooltip: "E-Mail",
+            press: function () {
+                sap.m.URLHelper.triggerEmail("sagar_agrawal@outlook.in");
+            }
+        });
+        var LinkedInbtn = new sap.m.OverflowToolbarButton("idLinkedInbtn", {
+            icon: "https://image.flaticon.com/icons/png/512/174/174857.png",
+            text: "LinkedIn",
+            tooltip: "LinkedIn",
+            press: function () {
+                sap.m.URLHelper.redirect("https://www.linkedin.com/in/sagar-agrawal-021b17b0", true);
+            }
+        });
+        headertitle.addAction(PhoneButton);
+        headertitle.addAction(shareButton);
+        headertitle.addAction(Emailbtn);
+        headertitle.addAction(LinkedInbtn);
+        flexbox.addItem(Avatar);
+        flexbox.addItem(VBOX);
+        oObjectPageLayout.addHeaderContent(flexbox);
+        HBox.addItem(NameTitle);
+        headertitle.setExpandedHeading(HBox);
+        headertitle.setSnappedHeading(snappedflexbox);
+        headertitle.addExpandedContent(posttext);
+        oObjectPageLayout.setHeaderTitle(headertitle);
+
+
+        var section1 = new sap.uxap.ObjectPageSection("idSection1", { titleUppercase: false, title: "Career Objective" });
+        var sub1sect1 = new sap.uxap.ObjectPageSubSection("idsub1sec1", {});
+        var overviewtext = new sap.m.Text("idovtext", {
+            text: "As an SAP UI5/Fiori full stack developer with experience in core web development technologies like HTML/JavaScript/CSS."
+        });
+        sub1sect1.addBlock(overviewtext);
+        section1.addSubSection(sub1sect1);
+        oObjectPageLayout.addSection(section1);
+
+        var section2 = new sap.uxap.ObjectPageSection("idSection2", { titleUppercase: false, title: "Skills" });
+        var sub1sect2 = new sap.uxap.ObjectPageSubSection("idsub1sec2", {});
+        var oSkills = {
+            Skills: [
+                {
+                    AvtImage: "data:image/jpeg;base64,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",
+                    AvtText: "SAP UI5",
+                    PopupImage: "SAPUI5.jpg",
+                    PopupTitle: "SAP UI5",
+                    Popupsubtitle: ""
+                }, {
+                    AvtImage: "https://static-s.aa-cdn.net/img/ios/824997258/ebb9af5ed67c3449f59fff257e4cad32",
+                    AvtText: "SAP Fiori",
+                    PopupImage: "https://static-s.aa-cdn.net/img/ios/824997258/ebb9af5ed67c3449f59fff257e4cad32",
+                    PopupTitle: "SAP Fiori",
+                    Popupsubtitle: "Sagar Agrawal"
+                },
+                {
+                    AvtImage: "https://img.icons8.com/color/452/odata.png",
+                    AvtText: "OData",
+                    PopupImage: "https://img.icons8.com/color/452/odata.png",
+                    PopupTitle: "OData",
+                    Popupsubtitle: "Sagar Agrawal"
+                }, {
+                    AvtImage: "https://icon-library.com/images/sap-icon/sap-icon-12.jpg",
+                    AvtText: "SAP ABAP",
+                    PopupImage: "https://icon-library.com/images/sap-icon/sap-icon-12.jpg",
+                    PopupTitle: "SAP ABAP",
+                    Popupsubtitle: "Sagar Agrawal"
+                },
+                {
+                    AvtImage: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png",
+                    AvtText: "HTML",
+                    PopupImage: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png",
+                    PopupTitle: "HTML",
+                    Popupsubtitle: "Sagar Agrawal"
+                },
+                {
+                    AvtImage: "https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_960_720.png",
+                    AvtText: "JavaScript",
+                    PopupImage: "https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_960_720.png",
+                    PopupTitle: "JavaScript",
+                    Popupsubtitle: "Sagar Agrawal"
+                }, {
+                    AvtImage: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png",
+                    AvtText: "CSS",
+                    PopupImage: "https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png",
+                    PopupTitle: "CSS",
+                    Popupsubtitle: "Sagar Agrawal"
+                }, {
+                    AvtImage: "https://spng.pngfind.com/pngs/s/683-6833893_node-js-logo-png-transparent-png.png",
+                    AvtText: "NodeJS",
+                    PopupImage: "https://spng.pngfind.com/pngs/s/683-6833893_node-js-logo-png-transparent-png.png",
+                    PopupTitle: "NodeJS",
+                    Popupsubtitle: "Sagar Agrawal"
+                }, {
+                    AvtImage: "https://i.pinimg.com/originals/4e/74/7c/4e747c82368d9681b75d54f56319dae7.png",
+                    AvtText: "Android Studio",
+                    PopupImage: "https://i.pinimg.com/originals/4e/74/7c/4e747c82368d9681b75d54f56319dae7.png",
+                    PopupTitle: "Android Studio",
+                    Popupsubtitle: "Sagar Agrawal"
+                }
+            ]
+        };
+        var oModel = new sap.ui.model.json.JSONModel(oSkills);
+        var GridList = new sap.f.GridList("idGridList", {});
+        var GridListItem = new sap.f.GridListItem("idGridListItem", {});
+        var AvtHBox = new sap.m.HBox("idAvtHBox", { alignItems: "Center" });
+        var Avt = new sap.m.Avatar("idAvt", { showBorder: true, src: "{AvtImage}" });
+        Avt.addStyleClass("sapUiTinyMargin");
+        var AvtText = new sap.m.Title("idAvtText", { text: "{AvtText}" });
+        var AvtLBI = new sap.m.LightBoxItem("idAvtLBI", {
+            imageSrc: "{PopupImage}",
+            alt: "SAP UI5",
+            title: "{PopupTitle}",
+            subtitle: "{Popupsubtitle}"
+        });
+        var AvtLB = new sap.m.LightBox("idAvtLB");
+        AvtLB.addImageContent(AvtLBI);
+        Avt.setDetailBox(AvtLB);
+        AvtHBox.addItem(Avt);
+        AvtHBox.addItem(AvtText);
+        GridListItem.addContent(AvtHBox);
+        GridList.addItem(GridListItem);
+        GridList.setModel(oModel);
+        var oBinding = {};
+        oBinding.path = "/Skills/";
+        oBinding.template = GridListItem.clone();
+        oBinding.templateShareable = true;
+        GridList.bindItems(oBinding);
+
+
+        var MessageStrip = new sap.m.MessageStrip("idMessageStrip", {
+            text: "Please click on image to know more",
+            showIcon: true
+        });
+        MessageStrip.addStyleClass("sapUiSmallMarginBottom");
+        var SkillsVBox = new sap.m.VBox("idSkillsVBox");
+        SkillsVBox.addItem(MessageStrip);
+        SkillsVBox.addItem(GridList);
+        sub1sect2.addBlock(SkillsVBox);
+        section2.addSubSection(sub1sect2);
+        oObjectPageLayout.addSection(section2);
+
+        var section3 = new sap.uxap.ObjectPageSection("idSection3", { titleUppercase: false, title: "Experience" });
+        var sub1sect3 = new sap.uxap.ObjectPageSubSection("idsub1sec3", {});
+        var ExpText = new sap.m.Text("iExpText", { text: "Hello Sagar" });
+        sub1sect3.addBlock(ExpText);
+        section3.addSubSection(sub1sect3);
+        oObjectPageLayout.addSection(section3);
+
+        var section4 = new sap.uxap.ObjectPageSection("idSection4", { titleUppercase: false, title: "Qualification" });
+        var sub1sect4 = new sap.uxap.ObjectPageSubSection("idsub1sec4", {});
+        var oTable = new sap.m.Table("idQualTable", {});
+        var Column1 = new sap.m.Column("idCol1", {});
+        var Column2 = new sap.m.Column("idCol2", {});
+        var Column3 = new sap.m.Column("idCol3", {});
+
+        var item1 = new sap.m.ColumnListItem("iditem1", {});
+        var item1col1 = new sap.m.Text("iditem1col1", { text: "Bachelor of Technology (EE)" });
+        var item1col2 = new sap.m.Text("iditem1col2", { text: "2018" });
+        var item1col3 = new sap.suite.ui.microchart.RadialMicroChart();
+        item1col3.setPercentage(91.90);
+        item1col3.addStyleClass("sapUiSmallMargin");
+        item1.addCell(item1col1);
+        item1.addCell(item1col2);
+        item1.addCell(item1col3);
+
+        var item2 = new sap.m.ColumnListItem("iditem2", {});
+        var item2col1 = new sap.m.Text("iditem2col1", { text: "Intermediate" });
+        var item2col2 = new sap.m.Text("iditem2col2", { text: "2014" });
+        var item2col3 = new sap.suite.ui.microchart.RadialMicroChart();
+        item2col3.setPercentage(86.0);
+        item2col3.addStyleClass("sapUiSmallMargin");
+        item2.addCell(item2col1);
+        item2.addCell(item2col2);
+        item2.addCell(item2col3);
+
+        var item3 = new sap.m.ColumnListItem("iditem3", {});
+        var item3col1 = new sap.m.Text("iditem3col1", { text: "Highschool" });
+        var item3col2 = new sap.m.Text("iditem3col2", { text: "2012" });
+        var item3col3 = new sap.suite.ui.microchart.RadialMicroChart();
+        item3col3.setPercentage(87.4);
+        item3col3.addStyleClass("sapUiSmallMargin");
+        item3.addCell(item3col1);
+        item3.addCell(item3col2);
+        item3.addCell(item3col3);
+
+        oTable.addColumn(Column1);
+        oTable.addColumn(Column2);
+        oTable.addColumn(Column3);
+        oTable.addItem(item1);
+        oTable.addItem(item2);
+        oTable.addItem(item3);
+        // var QualText = new sap.m.Text("idQualText", { text: "Hello Sagar" });
+        sub1sect4.addBlock(oTable);
+        section4.addSubSection(sub1sect4);
+        oObjectPageLayout.addSection(section4);
+
+        var section5 = new sap.uxap.ObjectPageSection("idSection5", { titleUppercase: false, title: "Achievements and Awards" });
+        var sub1sect5 = new sap.uxap.ObjectPageSubSection("idsub1sec5", {});
+        var AchiveText = new sap.m.Text("idAchiveText", { text: "Hello Sagar" });
+        sub1sect5.addBlock(AchiveText);
+        section5.addSubSection(sub1sect5);
+        oObjectPageLayout.addSection(section5);
+
+
+        var section6 = new sap.uxap.ObjectPageSection("idSection6", { titleUppercase: false, title: "Aspiration Role" });
+        var sub1sect6 = new sap.uxap.ObjectPageSubSection("idsub1sec6", {});
+        var AspirationText = new sap.m.Text("idAspirationText", { text: "Hello Sagar" });
+        sub1sect6.addBlock(AspirationText);
+        section6.addSubSection(sub1sect6);
+        oObjectPageLayout.addSection(section6);
+
+        var section7 = new sap.uxap.ObjectPageSection("idSection7", { titleUppercase: false, title: "Certifications" });
+        var sub1sect7 = new sap.uxap.ObjectPageSubSection("idsub1sec7", {});
+        var CertyText = new sap.m.Text("idCertyText", { text: "Hello Sagar" });
+        sub1sect7.addBlock(CertyText);
+        section7.addSubSection(sub1sect7);
+        oObjectPageLayout.addSection(section7);
+
+
+        var section8 = new sap.uxap.ObjectPageSection("idSection8", { titleUppercase: false, title: "Roles & Responsibilities" });
+        var sub1sect8 = new sap.uxap.ObjectPageSubSection("idsub1sec8", {});
+        var RolesRespoText = new sap.m.Text("idRolesRespoText", { text: "Hello Sagar" });
+        sub1sect8.addBlock(RolesRespoText);
+        section8.addSubSection(sub1sect8);
+        oObjectPageLayout.addSection(section8);
+
+
+
+        oObjectPageLayout.placeAt("content");
+        // oView.addContent(oObjectPageLayout);
+        // oView.placeAt("content");
+    </script>
+
+</head>
+
+<body class="sapUiBody" id="content">
+</body>
+
+</html>
